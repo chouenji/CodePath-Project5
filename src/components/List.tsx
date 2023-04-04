@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import Card from './Card';
 import { Brewery } from '../types/Brewery';
+import Chart from './Chart';
+import { Link, useNavigate } from 'react-router-dom';
+import BreweryInfo from '../pages/BreweryInfo';
 
 export default function List() {
   const [breweries, setBreweries] = useState<Brewery[]>();
@@ -8,6 +11,13 @@ export default function List() {
   const [search, setSearch] = useState('');
   const [selectedFilter, setSelectedFilter] = useState<string>('');
   const [selectedBrewery, setSelectedBrewery] = useState<Brewery>();
+  const navigate = useNavigate();
+
+  const handleRedirect = (id: string) => {
+    console.log(`Selected brewery with id ${id}`);
+    const brewery = breweries?.find((brewery) => brewery.id === id);
+    setSelectedBrewery(brewery);
+  };
 
   const getBreweries = async () => {
     const response = await fetch('https://api.openbrewerydb.org/v1/breweries');
@@ -24,7 +34,7 @@ export default function List() {
       switch (filterOption) {
         case 'city':
           filtered = breweries.filter((brewery) =>
-            brewery.city.toLowerCase().includes(searchText.toLowerCase())
+            brewery.country.toLowerCase().includes(searchText.toLowerCase())
           );
           break;
         case 'state':
@@ -70,6 +80,8 @@ export default function List() {
     getBreweries();
   }, []);
 
+  console.log(breweries);
+
   return (
     <div className="List text-white">
       <div className="header w-80 mx-auto">
@@ -98,7 +110,6 @@ export default function List() {
       </div>
       {selectedBrewery && (
         <>
-          {' '}
           <h1 className="font-bold text-2xl text-center mt-10">
             Random Brewery Chosen For You
           </h1>
@@ -119,9 +130,13 @@ export default function List() {
           <tbody>
             {filteredBreweries.map((brewery) => (
               <tr key={brewery.id}>
-                <td className="border-y">{brewery.name}</td>
+                <td className="border-y">
+                  <div onClick={() => handleRedirect(brewery.id)}>
+                    <Link to={`/breweries/${brewery.id}`}>{brewery.name}</Link>
+                  </div>
+                </td>
                 <td className="border-y">{brewery.brewery_type}</td>
-                <td className="border-y">{brewery.city}</td>
+                <td className="border-y">{brewery.country}</td>
                 <td className="border-y">{brewery.state}</td>
                 <td className="border-y">{brewery.country}</td>
               </tr>
@@ -129,6 +144,7 @@ export default function List() {
           </tbody>
         </table>
       </div>
+      <Chart data={breweries} />
     </div>
   );
 }

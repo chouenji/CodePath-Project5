@@ -1,31 +1,23 @@
-# Web Development Project 5 - _BreweryFinder_
+# Web Development Project 6 - _BrewFinder_
 
-Submitted by: **Kevin do Canto**
+Submitted by: **Kevin do Canro**
 
-This web app: **BreweryFinder is an app that helps you discover new breweries and beer-related experiences in your area. Using BreweryFinder, you can search for breweries by location, filter by brewery type, and explore details about each brewery, such as its website URL, phone number, and address. Additionally, BreweryFinder provides a "Random Brewery" feature that selects a brewery for you to try. With BreweryFinder, you can expand your knowledge of local beer culture and find new favorite spots to enjoy a pint with friends.**
+This web app: **This app is a web app that allows users to search for breweries. The user can search for breweries by state, city, or name. The user can also view the details of each brewery. The app also includes two unique charts that tell an interesting story about the data.**
 
-Time spent: **2.5** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The list displays a list of data fetched using an API call**
-- [x] **Data uses the useEffect React hook and async/await syntax**
-- [x] **The app dashboard includes at least three summary statistics about the data such as**
-  - [x] _Name_
-  - [x] _Type_
-  - [x] _City_
-  - [x] _State_
-  - [x] _Country_
-- [x] **A search bar allows the user to search for an item in the fetched data**
-- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
+- [x] **Clicking on an item in the list view displays more details about it**
+- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [x] Filters use different input types such as a text input, a selection, or a slider
-- [ ] The user can enter specific bounds for filter values
+- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
+- [ ] The site allows users to toggle between different data visualizations
 
 The following **additional** features are implemented:
 
@@ -35,15 +27,19 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/MMWZuAE.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/qTfnp2P.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with LiCEcap.
+<!-- Replace this with whatever GIF tool you used! -->
+
+GIF created with Licecap.
 
 ## Notes
 
 Describe any challenges encountered while building the app.
 
--Filtering by multiple categories was a challenge. I was able to get the filter to work for one category, but I was not able to get it to work for multiple categories.
+- Navigating to another page
+- Creating a unique link to each item's detail view page
+- Creating charts
 
 ## License
 

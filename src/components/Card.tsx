@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Brewery } from '../types/Brewery';
 
 export default function Card({ brewery }: { brewery: Brewery }) {
@@ -10,7 +9,7 @@ export default function Card({ brewery }: { brewery: Brewery }) {
       </div>
       <p className="text-sm">{brewery.street}</p>
       <p className="text-sm">
-        {brewery.city}, {brewery.state} {brewery.postal_code}
+        {brewery.country}, {brewery.state} {brewery.postal_code}
       </p>
       <p className="text-sm">{brewery.country}</p>
       <p className="text-sm">{brewery.phone}</p>

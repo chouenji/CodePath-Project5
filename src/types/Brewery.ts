@@ -1,10 +1,9 @@
 export type Brewery = {
-  id: number;
+  id: string;
   name: string;
   brewery_type: string;
   website_url: string;
   street: string;
-  city: string;
   state: string;
   postal_code: string;
   country: string;
